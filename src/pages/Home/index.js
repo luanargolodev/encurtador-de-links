@@ -6,6 +6,7 @@ import Menu from "../../components/Menu";
 export default function Home() {
   return (
     <div className="container-home">
+      <Menu />
       <div className="logo">
         <img src="/logo.png" alt="Logo" />
         <h1>Encurtador de Links</h1>
@@ -20,8 +21,6 @@ export default function Home() {
 
         <button>Encurtar link</button>
       </div>
-
-      <Menu />
     </div>
   );
 }
