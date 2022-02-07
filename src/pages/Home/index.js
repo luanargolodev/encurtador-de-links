@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { FiLink } from "react-icons/fi";
 import "./home.css";
 
 import Menu from "../../components/Menu";
+import LinkItem from "../../components/LinkItem";
 
 export default function Home() {
+  const [link, setLink] = useState("");
+
+  function handleShortLink() {
+    alert("Meu link" + link);
+  }
+
   return (
     <div className="container-home">
       <Menu />
@@ -16,11 +24,18 @@ export default function Home() {
       <div className="area-input">
         <div>
           <FiLink size={24} color="#ffffff" />
-          <input type="text" placeholder="Cole seu link aqui" />
+          <input
+            type="text"
+            placeholder="Cole seu link aqui"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+          />
         </div>
 
-        <button>Encurtar link</button>
+        <button onClick={handleShortLink}>Encurtar link</button>
       </div>
+
+      <LinkItem />
     </div>
   );
 }
